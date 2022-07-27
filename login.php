@@ -10,17 +10,24 @@
 </head>
 
 <?php
+include_once("dbhelper.php");
+
+$email = $_POST['email'];
+$user_name = $_REQUEST['login'];
+$pass = $_POST['pass'];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     connectdb();
     echo "Connection with DB";
-    
+    console.log("Connected");
     closedb();
+
 }
 ?>
 
 <body>
     <h2>Register as a new user</h2>
-    <form action="profile.html" method="post" id="register" onsubmit="return newUser()">
+    <form action="login.php" method="post" id="register" onsubmit="return newUser()">
         <div class="textfield">
             <label for="email">Email Address</label>
             <input type="text" name="email" id="email" placeholder="Email">
