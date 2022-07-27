@@ -12,17 +12,7 @@
 <?php
 include_once("dbhelper.php");
 
-$email = $_POST['email'];
-$user_name = $_REQUEST['login'];
-$pass = $_POST['pass'];
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    connectdb();
-    echo "Connection with DB";
-    console.log("Connected");
-    closedb();
-
-}
+if ($_SERVER["REQUEST_METHOD"] != "POST"){
 ?>
 
 <body>
@@ -69,5 +59,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
         <button type="submit">Login In</button>
     </form>
+    <?php
+} else{
+    $email = $_POST['email'];
+    $user_name = $_REQUEST['login'];
+    $pass = $_POST['pass'];
+    connectdb();
+    echo "Connection with DB";
+    msqli_query( $db_connect, "insert into users values ('$email', '$user_name', '$pass')");
+    closedb();
+
+}
+?>
 </body>
 </html>

@@ -10,7 +10,7 @@ var confirmPass = document.getElementById('pass2');
 var username = document.getElementById('userlogin');
 var userPass = document.getElementById('userPass')
 
-var form = document.getElementById('form');
+var form = document.getElementById('register');
 
 var loginError = document.getElementById('loginError');
 var mailError = document.getElementById('mailError');
