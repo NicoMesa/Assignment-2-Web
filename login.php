@@ -8,6 +8,16 @@
 
     <title>Document</title>
 </head>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    connectdb();
+    echo "Connection with DB";
+    
+    closedb();
+}
+?>
+
 <body>
     <h2>Register as a new user</h2>
     <form action="profile.html" method="post" id="register" onsubmit="return newUser()">
