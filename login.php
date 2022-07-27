@@ -9,12 +9,6 @@
     <title>Document</title>
 </head>
 
-<?php
-include_once("dbhelper.php");
-
-if ($_SERVER["REQUEST_METHOD"] != "POST"){
-?>
-
 <body>
     <h2>Register as a new user</h2>
     <form action="login.php" method="post" id="register" onsubmit="return newUser()">
@@ -45,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST"){
 
     </form>
     <h2>Login with existing username</h2>
-    <form action="profile.html" method="post" id="loginform" >
+    <form action="new_user.php" method="post" id="loginform" >
         <div class="textfield">
             <label for="userlogin">User Name</label>
             <input type="text" name="userlogin" id="userlogin" placeholder="User name">
@@ -59,17 +53,5 @@ if ($_SERVER["REQUEST_METHOD"] != "POST"){
         </div>
         <button type="submit">Login In</button>
     </form>
-    <?php
-} else{
-    $email = $_POST['email'];
-    $user_name = $_REQUEST['login'];
-    $pass = $_POST['pass'];
-    connectdb();
-    echo "Connection with DB";
-    msqli_query( $db_connect, "insert into users values ('$email', '$user_name', '$pass')");
-    closedb();
-
-}
-?>
 </body>
 </html>
