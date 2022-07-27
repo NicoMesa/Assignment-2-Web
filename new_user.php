@@ -7,11 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST['email'];
     $user_name = $_POST['login'];
     $pass = $_POST['pass'];
-
-    $new_user = msqli_query( $db_connect, "insert into users values ('$email', '$user_name', '$pass')");
+    $sql = "INSERT INTO users VALUES ('$email', '$user_name', '$pass')";
+    $new_user = msqli_query( $db_connect, $sql);
 
     $id = mysqli_insert_id($db);
-
+    echo "New user inserted";
     header("Location: profile.html?id=  $id");
 
     closedb();

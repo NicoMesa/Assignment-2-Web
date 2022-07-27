@@ -11,7 +11,7 @@
 
 <body>
     <h2>Register as a new user</h2>
-    <form action="login.php" method="post" id="register" onsubmit="return newUser()">
+    <form action="new_user.php" method="post" id="register" onsubmit="return newUser()">
         <div class="textfield">
             <label for="email">Email Address</label>
             <input type="text" name="email" id="email" placeholder="Email">
@@ -39,7 +39,7 @@
 
     </form>
     <h2>Login with existing username</h2>
-    <form action="new_user.php" method="post" id="loginform" >
+    <form action="profile.html" method="post" id="loginform" >
         <div class="textfield">
             <label for="userlogin">User Name</label>
             <input type="text" name="userlogin" id="userlogin" placeholder="User name">
