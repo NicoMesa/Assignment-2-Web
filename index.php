@@ -9,6 +9,6 @@
 
    <?php require_once("dbhelper.php") ?>
 
-   <h1></h1>
+   <h1>Find movies or shows in here</h1>
 </body>
 </html>
