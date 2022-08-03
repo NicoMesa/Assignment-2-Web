@@ -23,7 +23,7 @@
     <title>Movies</title>
 </head>
 <body>
-    <?php include ("header_boiler.html"); ?>
+    <?php include ("headerboiler.html"); ?>
     <h2>Add here your favorite series and shows</h2>
     <form method="POST">
         <input type="text" placeholder="Search.." name="movie" id="search">
