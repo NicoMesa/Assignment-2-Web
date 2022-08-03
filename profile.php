@@ -7,18 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div>
-            <a class="top" href="login.php">Sign-In / Register</a>
-        </div>
-        <h1>My Profile</h1>
-        <h2>Selection of your favorite movies and shows</h2>
-        <nav>
-            <a class="link" href="index.html">Main Page</a>
-            <a class="link" href="shows.html">List of shows</a>
-            <a class="link" href="movies.html">List of movies</a>
-        </nav>
-    </header>
+<?php include ("header.html"); ?>
     <main>
         <div>
             <input type="text" placeholder="Filter by title">
