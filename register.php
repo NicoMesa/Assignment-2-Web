@@ -1,4 +1,5 @@
-<?php include ("headerboiler.html"); 
+<?php include ("headboiler.html"); 
+include ("headerboiler.html"); 
 ?>
 <body>
     <a class="top" href="index.php">Back to home page</a>
