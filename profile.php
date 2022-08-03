@@ -1,3 +1,6 @@
+<?php
+echo 'PHP version: ' . phpversion();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +10,16 @@
     <title>Profile</title>
 </head>
 <body>
-<<<<<<< HEAD:profile.php
 <?php include ("headerboiler.html"); ?>
-=======
-    <header>
-        <div>
-            
-            <h1>My Profile</h1>
-            <h2>Selection of your favorite movies and shows</h2>
-            <nav>
-                <a class="link" href="index.php">Main Page</a>
-                <a class="link" href="shows.html">List of shows</a>
-                <a class="link" href="movies.html">List of movies</a>
-            </nav>
-        </div>
-    </header>
->>>>>>> e47129b4140667aba30314dda51fac7ab77d613c:profile.html
+<?php
+    ini_set('display_startup_errors', 1);
+    ini_set('display_errors', 1);
+    error_reporting(-1);
+
+    include_once("verify_login.php");
+
+?>
+    
     <main>
         <div>
             <input type="text" placeholder="Filter by title">

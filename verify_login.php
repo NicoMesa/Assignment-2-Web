@@ -9,21 +9,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             echo "<h3>error conecting</h3>";
     }
     // Taking all 5 values from the form data(input)
-    $email =  $_POST['email'];
-    $login = $_POST['login'];
-    $pass =  $_POST['pass'];
+    $login = $_POST['userlogin'];
+    $pass =  $_POST['userPass'];
+    
     // Performing insert query execution
     // here our table name is college
-    $sql = "INSERT INTO users (email, user_name, password) VALUES ('$email', '$login','$pass')";
-    if(mysqli_query($conn, $sql)){
-        echo "<h3>You succesfully created a new account!</h3>";
-
-        echo nl2br("\n<h4>Your email: $email</h4>\n <h4>Your user name: $login</h4>\n ");
-    } else{
+    $sql = "SELECT * FROM users WHERE user_name = '$login' and password = '$pass' ";
+    $info = mysqli_query($conn, $sql);
+    if(!$info){
+        echo "<h3>No records</h3>";
+    }
+    else{
+        $array = mysqli_fetch_array($info);
+        echo "<h1>Welcome back: $array[2]</h1>";
+    }
+    echo nl2br("\n<h4>Your email: $array[1] </h4>\n <h4>Your user name: $array[2] </h4>\n ");
+    /*
+    else{
         echo "ERROR: Hush! Sorry $sql. "
             . mysqli_error($conn);
             echo "<h3>error</h3>";
     }
+    */
     // Close connection
     mysqli_close($conn);
 }

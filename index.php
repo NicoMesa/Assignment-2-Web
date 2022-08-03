@@ -12,7 +12,7 @@
     <title>Index</title>
 </head>
 <body>
-   <?php require_once("dbhelper.php") ?>
+    <?php include_once("new_user.php"); ?>
 
    <h1>Find movies or shows in here</h1>
 

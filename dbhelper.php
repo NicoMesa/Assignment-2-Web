@@ -11,6 +11,9 @@
         if (!$db_connect) {
             die("Connection failed: " . mysqli_connect_error());
         }
+        else{
+            echo "<p> succesful </p>";
+        }
 
     }
     function closedb(){
