@@ -1,4 +1,4 @@
- <?php include ("head_boiler.html"); ?>
+ <?php include ("headboiler.html"); ?>
  <body>
     <a class="top" href="index.php">Back to home page</a>
     <a class="top" href="login.php">Already have an account? Sign-In!</a>
