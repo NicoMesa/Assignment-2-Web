@@ -19,6 +19,7 @@ include ("headerboiler.html"); ?>
    }
    ?>
    <h1>Find movies or shows in here</h1>
+   <h2> Hello Bruno</h2>
   
 
 </body>
