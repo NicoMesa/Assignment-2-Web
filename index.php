@@ -15,7 +15,7 @@ include ("headerboiler.html"); ?>
 <body>
     <?php include_once("new_user.php");
    if(isset($_SESSION['username'])){
-    echo "<h2>Welcome back: " .$_SESSION['username']. "</h2>";
+    echo "<h2>Welcome back: " .$_SESSION['username']. " </h2>";
    }
    ?>
    <h1>Find movies or shows in here</h1>
