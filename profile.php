@@ -38,18 +38,34 @@ echo 'PHP version: ' . phpversion();
              // Performing insert query execution
              $sql = "SELECT title, img, year, plot, rating FROM movies WHERE user_id = " .$_SESSION['id']. " ";
              $movies = mysqli_query($conn, $sql);
-             if(mysqli_query($conn, $sql)){
+             
+             if($movies){
                  echo "<h3>Your movies!</h3>";
-                 $array = mysqli_fetch_array($movies);
-                 foreach ($array as $i){
-                    echo $i;
-                 }
-                 //print_r ($array);
-             } else{
-                 echo "ERROR: Hush! Sorry $sql. "
-                     . mysqli_error($conn);
-                     echo "<h3>error</h3>";
-             }
+                 $rows = mysqli_num_rows($movies);
+                           
+                if ($rows > 0){
+                    echo "<table> 
+                    <tr>
+                        <th></th>
+                        <th>Title</th> 
+                        <th>Year</th>
+                        <th>Rating</th>
+                    </tr>";
+                    while($i = mysqli_fetch_assoc($movies)) {
+                        echo 
+                            "<tr>
+                                <td> <img src=' ".$i['img']." '> </td>
+                                <td>".$i['title']."</td> 
+                                <td>".$i['year']."</td>
+                                <td>".$i['rating']."</td>
+                            </tr>";
+                    }
+                    echo "</table>";
+                    mysqli_free_result($movies);
+                } else {
+                    echo "<h3> 0 movies on your profile! </h3>";
+                    }
+            }
              // Close connection
              mysqli_close($conn);
             ?>
