@@ -18,16 +18,15 @@
         <button type="submit">Search</button>
     </form>
     <?php
+      ini_set('display_startup_errors', 1);
+      ini_set('display_errors', 1);
+      error_reporting(-1);
+  
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $search = $_POST['movie'];
             $request = "http://www.omdbapi.com/?t=$search&plot=full&type=movie&apikey=9ab90ab5&";
             $array_movies = file_get_contents($request);
             $json = json_decode($array_movies, true);
-            /*
-            foreach($json as $i){
-                echo $i;
-            }
-            */
             print_r ($json);
             $title = $json['Title'];
             $poster = $json['Poster'];
@@ -40,12 +39,15 @@
             <h3>$title</h3>
             <h4>$year</h4>
             <p>$plot</p>
-            <p>$rating</p>
-            <button type='button'> Add to my profile </button>
-            ";
-    
+            <p>$rating</p>";
+
+            echo "<form method='post'>
+            <button type='submit'> Add to my profile </button>";
+            include("add_movie.php");
+            echo "</form>";
         }
-  
+       
+           
     ?>
 
    

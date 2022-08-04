@@ -26,7 +26,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo nl2br("\n<h4>Your email: $array[1] </h4>\n <h4>Your user name: $array[2] </h4>\n ");
         $_SESSION['username'] = $array[2];
         $_SESSION['email'] = $array[1];
-        echo $_SESSION['username'];
+        $_SESSION['id'] = $array[0];
+        echo $_SESSION['id'];
     }
     
     /*
