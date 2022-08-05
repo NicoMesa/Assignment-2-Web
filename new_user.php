@@ -1,4 +1,5 @@
 <?php
+header( "refresh:0;url=index.php" );
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $conn = mysqli_connect("localhost", "root", "", "assignment2");
 
@@ -16,8 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     // here our table name is college
     $sql = "INSERT INTO users (email, user_name, password) VALUES ('$email', '$login','$pass')";
     if(mysqli_query($conn, $sql)){
-        echo "<h3>You succesfully created a new account!</h3>";
-        echo nl2br("\n<h4>Your email: $email</h4>\n <h4>Your user name: $login</h4>\n ");
+        echo "<script>alert('Account created succesfully!');</script>";
     } else{
         echo "ERROR: Hush! Sorry $sql. "
             . mysqli_error($conn);

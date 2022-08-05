@@ -1,6 +1,4 @@
-<?php
-echo 'PHP version: ' . phpversion();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +27,6 @@ echo 'PHP version: ' . phpversion();
             <h2>Your watchlist</h2>
             <?php
              $conn = mysqli_connect("localhost", "root", "", "assignment2");
-             echo "<p>after conection </p>";
              // Check connection
              if($conn === false){
                  die("ERROR: Could not connect. "

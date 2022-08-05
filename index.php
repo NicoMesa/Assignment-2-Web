@@ -3,24 +3,16 @@
 include ("headboiler.html"); 
 include ("headerboiler.html"); ?>
 <body>
-    <h2> This web let you search your favorite movies and store it in your profile! </h2>
-    
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
-    <?php include_once("new_user.php");
+    <?php
    if(isset($_SESSION['username'])){
     echo "<h2>Welcome back: " .$_SESSION['username']. " </h2>";
+    echo "<p>Your Email: " .$_SESSION['email']. " </p>";
    }
    ?>
-   <h1>Find movies or shows in here</h1>
-   <h2> Hello Bruno</h2>
-  
-
+    <div>
+        <h1> This web let you search your favorite movies and store it in your profile! </h1>
+        <h2> Search thousands of movies and series and add them to your watchllist!</h2>
+        <h3> <i>Never forget what movie or show to watch next</i> </h3>
+    </div>
 </body>
 </html>

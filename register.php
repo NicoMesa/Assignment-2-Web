@@ -2,11 +2,9 @@
 include ("headerboiler.html"); 
 ?>
 <body>
-    <a class="top" href="index.php">Back to home page</a>
-    <a class="top" href="register.php">Register as new user</a>
     <h2>Register as a new user</h2>
 
-    <form action="index.php" method="post" id="register" onsubmit="return newUser()">
+    <form action="new_user.php" method="post" id="register" onsubmit="return newUser()">
         <div class="textfield">
             <label for="email">Email Address</label>
             <input type="text" name="email" id="email" placeholder="Email">

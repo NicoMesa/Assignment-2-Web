@@ -1,6 +1,5 @@
 <?php
     session_start();
-    echo $_SESSION['title'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +31,6 @@
             $request = "http://www.omdbapi.com/?t=$search&plot=full&type=movie&apikey=9ab90ab5&";
             $array_movies = file_get_contents($request);
             $json = json_decode($array_movies, true);
-            print_r ($json);
             $title = $json['Title'];
             $poster = $json['Poster'];
             $year = $json['Year'];
@@ -52,10 +50,14 @@
             <p>$plot</p>
             <p>$rating</p>
             </div>";
-
+            if(!isset($_SESSION['id'])){
+                echo "<h2> Please sign or create an account to add movies to your profile! </h2>";
+            }
+            else{
             echo "<form action='add_movie.php' method='post'>
             <button type='submit'> Add to my profile </button>
             </form>";
+            }
         }
        
            

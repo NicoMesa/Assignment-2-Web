@@ -23,20 +23,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else{
         $array = mysqli_fetch_array($info);
         echo "<h1>Welcome back: $array[2]</h1>";
-        echo nl2br("\n<h4>Your email: $array[1] </h4>\n <h4>Your user name: $array[2] </h4>\n ");
+        echo ("<h4>Your email: $array[1] </h4> 
+        <h4>Your user name: $array[2] </h4>");
         $_SESSION['username'] = $array[2];
         $_SESSION['email'] = $array[1];
         $_SESSION['id'] = $array[0];
-        echo $_SESSION['id'];
     }
-    
-    /*
-    else{
-        echo "ERROR: Hush! Sorry $sql. "
-            . mysqli_error($conn);
-            echo "<h3>error</h3>";
-    }
-    */
     // Close connection
     mysqli_close($conn);
 }

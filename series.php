@@ -24,7 +24,7 @@
         unset($_SESSION['year']);
         unset($_SESSION['plot']);
         unset($_SESSION['rating']);
-        
+
         $search = $_POST['series'];
         $request = "http://www.omdbapi.com/?t=$search&plot=full&type=series&apikey=9ab90ab5&";
         $array_movies = file_get_contents($request);
@@ -49,10 +49,14 @@
         <p>$rating</p>
         </div>
         ";
-
+        if(!isset($_SESSION['id'])){
+            echo "<h2> Please sign or create an account to add movies to your profile! </h2>";
+        }
+        else{
         echo "<form action='add_series.php' method='post'>
             <button type='submit'> Add to my profile </button>
             </form>";
+        }
     }
    
     ?>
