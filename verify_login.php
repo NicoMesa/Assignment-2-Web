@@ -1,8 +1,10 @@
 <?php
+//file to verify if user exist and login to profile
+//session start to get session variables
 session_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    //connect to database
     $conn = mysqli_connect("localhost", "root", "", "assignment2");
-
     // Check connection
     if($conn === false){
         die("ERROR: Could not connect. "

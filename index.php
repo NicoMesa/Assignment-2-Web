@@ -1,14 +1,20 @@
 
-<?php session_start();
+<?php 
+//Index web page
+//start session to get variables if exists
+session_start();
+//include html templates
 include ("headboiler.html"); 
 include ("headerboiler.html"); ?>
 <body>
     <?php
-   if(isset($_SESSION['username'])){
-    echo "<h2>Welcome back: " .$_SESSION['username']. " </h2>";
-    echo "<p>Your Email: " .$_SESSION['email']. " </p>";
+    //check if there is a session active to greet the user
+    if(isset($_SESSION['username'])){
+        echo "<h2>Welcome back: " .$_SESSION['username']. " </h2>";
+        echo "<p>Your Email: " .$_SESSION['email']. " </p>";
    }
    ?>
+<!-- rest of the page to show what the page does -->
     <div>
         <h1> This web let you search your favorite movies and store it in your profile! </h1>
         <h2> Search thousands of movies and series and add them to your watchllist!</h2>

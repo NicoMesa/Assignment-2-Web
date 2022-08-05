@@ -1,4 +1,5 @@
 <?php
+//file to create the database and the required tables
 // Create connection
 $conn = mysqli_connect("localhost", "root", "");
 // Check connection

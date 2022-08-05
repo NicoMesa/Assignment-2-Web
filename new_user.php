@@ -1,6 +1,9 @@
 <?php
+//file to create and store new user to database
+//redirect after creation to the index page.
 header( "refresh:0;url=index.php" );
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    //create a connection to database
     $conn = mysqli_connect("localhost", "root", "", "assignment2");
 
     // Check connection

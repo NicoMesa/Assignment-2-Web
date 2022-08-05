@@ -1,5 +1,6 @@
- <?php include ("headerboiler.html"); 
-    include_once("dbhelper.php");
+ <?php 
+include ("headerboiler.html"); 
+include_once("dbhelper.php");
  ?>
  <body>
     <h2>Login with existing username</h2>
