@@ -1,7 +1,6 @@
 <?php
-//include('movies.php');
 session_start();
-header( "refresh:5;url=movies.php" );
+header( "refresh:5;url=series.php" );
 ini_set('display_startup_errors', 1);
 ini_set('display_errors', 1);
 error_reporting(-1);
@@ -23,12 +22,12 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
     }
     
     // Performing insert query execution
-    $sql = "INSERT INTO movies (user_id, title, img, year, plot, rating) 
-    VALUES (  ".$_SESSION['id']." , '$title', '$poster', '$year', 'plot', '$rating')";
+    $sql = "INSERT INTO series (user_id, title, year, img, rating) 
+    VALUES (  ".$_SESSION['id']." , '$title', '$year', '$poster', '$rating')";
     if(mysqli_query($conn, $sql)){
-        echo "<h1>You succesfully added $title to your profile!</h1>
+        echo "<h1>You succesfully added the show $title to your profile!</h1>
         <img src='$poster' >
-        <h4> You will be redirectioned to the movie search bar in 5 seconds... </h4>";
+        <h4> You will be redirectioned to the series search bar in 5 seconds... </h4>";
     } else{
         echo "ERROR: Hush! Sorry $sql. "
             . mysqli_error($conn);

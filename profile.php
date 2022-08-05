@@ -16,15 +16,17 @@ echo 'PHP version: ' . phpversion();
     ini_set('display_errors', 1);
     error_reporting(-1);
     include_once("verify_login.php");
-?>
-    
+    if(!isset($_SESSION['id'])){
+        echo "<h2> Please sign in to your account! </h2>";
+    }
+    else{
+?> 
     <main>
         <div>
             <input type="text" placeholder="Filter by title">
         </div>
         <div>
-            Movies
-            <!--loop to show a table of title, year, plot -->
+            <h2>Your watchlist</h2>
             <?php
              $conn = mysqli_connect("localhost", "root", "", "assignment2");
              echo "<p>after conection </p>";
@@ -35,22 +37,24 @@ echo 'PHP version: ' . phpversion();
                      echo "<h3>error conecting</h3>";
              }
              
-             // Performing insert query execution
-             $sql = "SELECT title, img, year, plot, rating FROM movies WHERE user_id = " .$_SESSION['id']. " ";
-             $movies = mysqli_query($conn, $sql);
+             // select movies that user added
+             $sql_movies = "SELECT title, img, year, plot, rating FROM movies WHERE user_id = " .$_SESSION['id']. " ";
+             $movies = mysqli_query($conn, $sql_movies);
              
              if($movies){
                  echo "<h3>Your movies!</h3>";
                  $rows = mysqli_num_rows($movies);
                            
                 if ($rows > 0){
-                    echo "<table> 
-                    <tr>
-                        <th></th>
-                        <th>Title</th> 
-                        <th>Year</th>
-                        <th>Rating</th>
-                    </tr>";
+                    echo 
+                    "<div>
+                    <table> 
+                        <tr>
+                            <th></th>
+                            <th>Title</th> 
+                            <th>Year</th>
+                            <th>Rating</th>
+                        </tr>";
                     while($i = mysqli_fetch_assoc($movies)) {
                         echo 
                             "<tr>
@@ -60,22 +64,57 @@ echo 'PHP version: ' . phpversion();
                                 <td>".$i['rating']."</td>
                             </tr>";
                     }
-                    echo "</table>";
+                    echo "
+                    </table>
+                    </div>";
                     mysqli_free_result($movies);
                 } else {
                     echo "<h3> 0 movies on your profile! </h3>";
-                    }
+                }
+             }
+
+                $sql_series = "SELECT title, img, year, rating FROM series WHERE user_id = " .$_SESSION['id']. " ";
+                $series = mysqli_query($conn, $sql_series);
+                if($series){
+                    echo "<h3>Your Series!</h3>";
+                    $rows = mysqli_num_rows($series);
+                              
+                   if ($rows > 0){
+                       echo "
+                       <div>
+                       <table> 
+                       <tr>
+                           <th></th>
+                           <th>Title</th> 
+                           <th>Year</th>
+                           <th>Rating</th>
+                       </tr>";
+                       while($i = mysqli_fetch_assoc($series)) {
+                           echo 
+                               "<tr>
+                                   <td> <img src=' ".$i['img']." '> </td>
+                                   <td>".$i['title']."</td> 
+                                   <td>".$i['year']."</td>
+                                   <td>".$i['rating']."</td>
+                               </tr>";
+                       }
+                       echo "
+                       </div>
+                       </table>";
+                       mysqli_free_result($series);
+                   } else {
+                       echo "<h3> 0 series on your profile! </h3>";
+                       }
+                    
             }
              // Close connection
              mysqli_close($conn);
             ?>
         </div>
-        <div>
-            Shows
-            <!--loop to show a table of title, year, plot -->
-
-        </div>
     </main>
+    <?php
+    }
+    ?>
     <footer>
 
     </footer>

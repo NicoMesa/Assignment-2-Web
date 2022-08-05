@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    echo $_SESSION['title'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +18,16 @@
         <button type="submit">Search</button>
     </form>
     <?php
-      ini_set('display_startup_errors', 1);
-      ini_set('display_errors', 1);
-      error_reporting(-1);
-  
+    ini_set('display_startup_errors', 1);
+    ini_set('display_errors', 1);
+    error_reporting(-1);
+    $flag=false;
         if($_SERVER["REQUEST_METHOD"] == "POST"){
+            unset($_SESSION['title']);
+            unset($_SESSION['poster']);
+            unset($_SESSION['year']);
+            unset($_SESSION['plot']);
+            unset($_SESSION['rating']);
             $search = $_POST['movie'];
             $request = "http://www.omdbapi.com/?t=$search&plot=full&type=movie&apikey=9ab90ab5&";
             $array_movies = file_get_contents($request);
@@ -33,18 +38,24 @@
             $year = $json['Year'];
             $plot = $json['Plot'];
             $rating = $json['Ratings'][1]['Value'];
-            
+
+            $_SESSION['title'] = $title;
+            $_SESSION['poster'] = $poster;
+            $_SESSION['year'] = $year;
+            $_SESSION['plot'] = $plot;
+            $_SESSION['rating'] = $rating;
+
             echo "<img src='$poster'>
             <div>
             <h3>$title</h3>
             <h4>$year</h4>
             <p>$plot</p>
-            <p>$rating</p>";
+            <p>$rating</p>
+            </div>";
 
-            echo "<form method='post'>
-            <button type='submit'> Add to my profile </button>";
-            include("add_movie.php");
-            echo "</form>";
+            echo "<form action='add_movie.php' method='post'>
+            <button type='submit'> Add to my profile </button>
+            </form>";
         }
        
            
