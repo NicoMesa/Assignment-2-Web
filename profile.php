@@ -8,7 +8,9 @@
     <title>Profile</title>
 </head>
 <body>
-<?php include ("headerboiler.html"); ?>
+<?php 
+include("headboiler.html");
+include ("headerboiler.html"); ?>
 <?php
     ini_set('display_startup_errors', 1);
     ini_set('display_errors', 1);
@@ -35,7 +37,7 @@
              }
              
              // select movies that user added
-             $sql_movies = "SELECT title, img, year, plot, rating FROM movies WHERE user_id = " .$_SESSION['id']. " ";
+             $sql_movies = "SELECT title, img, year, rating FROM movies WHERE user_id = " .$_SESSION['id']. " ";
              $movies = mysqli_query($conn, $sql_movies);
              
              if($movies){

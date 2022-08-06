@@ -44,7 +44,6 @@ user_id INT(11),
 title VARCHAR(40), 
 img VARCHAR(500),
 year INT(11),
-plot VARCHAR(500),
 rating VARCHAR(10)
 )";
 //check if created correclty

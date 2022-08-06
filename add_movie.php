@@ -6,13 +6,12 @@ ini_set('display_startup_errors', 1);
 ini_set('display_errors', 1);
 error_reporting(-1);
 
-if($_SERVER["REQUEST_METHOD"] == 'POST'){
-    //get data from global variables
-    $title = $_SESSION['title'];
-    $poster = $_SESSION['poster'];
-    $year = $_SESSION['year'];
-    $plot = $_SESSION['plot'];
-    $rating = $_SESSION['rating'];
+if($_SERVER["REQUEST_METHOD"] == 'GET'){
+    //get data from get array
+    $title = $_GET['title'];
+    $poster = $_GET['poster'];
+    $year = $_GET['year'];
+    $rating = $_GET['rating'];
     //start the connection to database
     $conn = mysqli_connect("localhost", "root", "", "assignment2");
     // check the connection
@@ -23,8 +22,8 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
     }
     
     // Pinsert the movies to table
-    $sql = "INSERT INTO movies (user_id, title, img, year, plot, rating) 
-    VALUES (  ".$_SESSION['id']." , '$title', '$poster', '$year', 'plot', '$rating')";
+    $sql = "INSERT INTO movies (user_id, title, img, year, rating) 
+    VALUES (  ".$_SESSION['id']." , '$title', '$poster', '$year', '$rating')";
     //succesfully added the movies
     if(mysqli_query($conn, $sql)){
         //display the movie info added
@@ -40,9 +39,5 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
     mysqli_close($conn);
     //unset global variable for the next searches
     unset($_SESSION['title']);
-    unset($_SESSION['poster']);
-    unset($_SESSION['year']);
-    unset($_SESSION['plot']);
-    unset($_SESSION['rating']);
 }
 ?>

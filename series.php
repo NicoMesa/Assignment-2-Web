@@ -10,7 +10,7 @@ include("headboiler.html");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
+    <title>Series</title>
 </head>
 <body>
     <div class="series">
@@ -24,49 +24,49 @@ include("headboiler.html");
         </form>
         <?php
            if($_SERVER["REQUEST_METHOD"] == "POST"){
-            //unset varibles to store new values after the post reuqets
-            unset($_SESSION['title']);
-            unset($_SESSION['poster']);
-            unset($_SESSION['year']);
-            unset($_SESSION['plot']);
-            unset($_SESSION['rating']);
-            //obtain movie name from form
+            //obtain series name from form
             $search = $_POST['series'];
             //API reuqets to database containing shows. The return type will be a JSON containing information
-            $request = "http://www.omdbapi.com/?t=$search&plot=full&type=series&apikey=9ab90ab5&";
-            $array_movies = file_get_contents($request);
+            $request = "http://www.omdbapi.com/?s=$search&type=series&apikey=9ab90ab5&";
+            $array_series = file_get_contents($request);
             //decode results as array to retrieve information
-            $json = json_decode($array_movies, true);
+            $json = json_decode($array_series, true);
             //Obtaining info about shows by searching the array
-            $title = $json['Title'];
-            $poster = $json['Poster'];
-            $year = $json['Year'];
-            $plot = $json['Plot'];
-            $rating = $json['Ratings'][1]['Value'];
-            //set session variables in order to handle them in a new page after a new post request
-            $_SESSION['title'] = $title;
-            $_SESSION['poster'] = $poster;
-            $_SESSION['year'] = $year;
-            $_SESSION['plot'] = $plot;
-            $_SESSION['rating'] = $rating;
-            //display info about shows
-            echo "<img src='$poster'>
-            <div class='displayInfo'>
-            <h3>$title</h3>
-            <h4>$year</h4>
-            <p>$plot</p>
-            <p>$rating</p>
-            </div>
-            ";
-            //if user is not signed in
-            if(!isset($_SESSION['id'])){
-                echo "<h2> Please sign or create an account to add movies to your profile! </h2>";
-            }
-            //if user signed in, can add series to profile
-            else{
-            echo "<form action='add_series.php' method='post'>
-                <button type='submit'> Add to my profile </button>
-                </form>";
+            foreach ($json['Search'] as $i){
+                //save variablesa accordingly
+                $title = $i['Title'];
+                $poster = $i['Poster'];
+                $year = $i['Year'];
+                $code = $i['imdbID'];
+                //new request to extra information not available
+                $extra_info = "http://www.omdbapi.com/?type=series&i=$code&plot=full&apikey=9ab90ab5&";
+                $extra_array = file_get_contents($extra_info);
+                $json_extra = json_decode($extra_array, true);
+                $plot = $json_extra['Plot'];
+                $rating = $json_extra['Ratings'][1]['Value'];
+                //display info about series
+                echo "
+                <form action='add_series.php' method='get'>
+                    <div>
+                        <br>
+                        <img src='$poster'>
+                        <div class='displayInfo'>
+                        <h4 name='series'>$title</h4>
+                        <h3 name='year'>$year</h3>
+                        <p name='plot'>$plot</p>
+                        <p name='rating'>$rating</p>
+                    </div>";
+                    //if user is not signed in
+                    if(!isset($_SESSION['id'])){
+                        echo "<h4> Please sign or create an account to add $title to your profile! </h4>";
+                    }
+                    //if user signed in, can add serie to profile
+                    else{
+                    echo "
+                    <button type='submit'> <a href='add_series.php?title=$title&poster=$poster&year=$year&rating=$rating'> Add $title to my profile </a> </button>
+                    <br>
+                    </form>";
+                    }
             }
         }
         ?>
