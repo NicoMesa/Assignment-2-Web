@@ -3,6 +3,13 @@
 }
 body{
     font-family: 'Raleway';
+    text-align: center;
+}
+.registration{
+    text-align: right;
+}
+.registration h1{
+    text-align: center;
 }
 
 p{
@@ -125,3 +132,31 @@ button[type=submit]{
 button:hover{
     opacity: 0.5;
 }
+table {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+	border-collapse: collapse;
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: middle;
+}
+th {
+    background-color: rgb(228, 142, 84);
+    color: white;
+    font-size: 26pt;
+    font-weight: bolder;
+}
+td{
+    font-size: 25pt;
+}
+img{
+    border: #6E7E6E solid;
+
+}
+#profile{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+  

@@ -17,12 +17,17 @@ include ("headerboiler.html"); ?>
     error_reporting(-1);
     include_once("verify_login.php");
     if(!isset($_SESSION['id'])){
+        ?>
+        <br><br><br> <br><br><br><br><br>
+        <?php
         echo "<h2> Please sign in to your account! </h2>";
     }
     else{
 ?> 
-    <main>
+    <main id='profile'>
         <div>
+            <br><br><br> <br><br><br><br><br>
+            <h1>Welcome back <?php echo $_SESSION['username']?></h1>
             <input type="text" placeholder="Filter by title">
         </div>
         <div>

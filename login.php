@@ -1,5 +1,7 @@
  <?php 
-include ("headboilerForm.html"); 
+//include ("headboilerForm.html"); 
+include("headerboiler.html");
+include ("headboiler.html"); 
 include_once("dbhelper.php");
  ?>
  <body>
@@ -17,8 +19,8 @@ include_once("dbhelper.php");
                     <span id="userPassError" class="error"></span>
                 </div>
                 <button type="submit">Login In</button>
-                <a href="register.php">Don't have an account? Sign-Up</a>
             </form>
+            <a href="register.php">Don't have an account? Sign-Up</a>
         </div>
         
 </body>
