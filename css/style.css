@@ -4,14 +4,28 @@
 body{
     font-family: 'Raleway';
 }
+
 p{
     font-size: 20px;
 }
-nav{
-    float: right;
-    color: #EDF6E6;        
-    padding: 20px;
+.registration{
+    display: flexbox;
+    color: #EDF6E6;    
+    background-color: #6E7E6E;    
+    padding: 5px;
     margin-bottom: 20px;
+    overflow: hidden; 
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%;
+}
+
+.navigation{
+    float: right;
+    color: #EDF6E6;   
+    background-color: #cf5423;     
+    padding: 20px;
+    margin-top: 90px;
     overflow: hidden; 
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
@@ -22,17 +36,13 @@ nav{
     text-align: left;
 
 }
-.registration{
-    background-color: #6E7E6E;
-}
-.navigation{
-    background-color: #6E7E6E;
+.registration h1{
+    justify-content: flex-end;
 }
 .registration a{
-    float: right;
+    justify-content: flex-start;
 }
 a{
-    padding: 5px;
     margin: 5px;
     text-decoration: none;
     color: #EDF6E6;
@@ -40,15 +50,27 @@ a{
 a:hover{
     opacity: 0.7;
 }
+
+
+.loginlink{
+    display: flex;
+    padding-right: 800px;
+    color: aqua;
+}
 .mainpage{
     margin-top: 110px;
     align-items: center;
     justify-content: center;
 }
 
-.newuser{
+.form{
+    margin-top: 180px;
     padding-left: 50px;
     padding-right: 50px;
+}
+.movies, .series{
+    margin-top: 180px;
+
 }
 
 input[type=text], input[type=password] {

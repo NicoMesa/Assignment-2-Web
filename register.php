@@ -1,10 +1,11 @@
 <?php 
 //include html headers
+include("headerboiler.html");
 include ("headboiler.html"); 
 
 ?>
 <body>
-    <div class="newuser">
+    <div class="form">
         <h2>Register as a new user</h2>
         <!-- Form to get values from user, data will be handled in the bakcend after submit -->
         <form action="new_user.php" method="post" id="register" onsubmit="return newUser()">
@@ -30,7 +31,9 @@ include ("headboiler.html");
                 <span id="pass2Error" class="error"></span>
             </div>
             <button type="submit">Create User</button>
+            <a href="login.php" class="loginlink">Already have an account? Login</a>
         </form>
+        
     </div>
 
 

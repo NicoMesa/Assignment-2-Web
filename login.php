@@ -1,10 +1,10 @@
  <?php 
-include ("headerboiler.html"); 
+include ("headboilerForm.html"); 
 include_once("dbhelper.php");
  ?>
  <body>
     <h2>Login with existing username</h2>
-        <div class="login">
+        <div class="form">
             <form action="profile.php" method="post" id="loginform" >
                 <div class="textfield">
                     <label for="userlogin">User Name</label>
@@ -17,6 +17,7 @@ include_once("dbhelper.php");
                     <span id="userPassError" class="error"></span>
                 </div>
                 <button type="submit">Login In</button>
+                <a href="register.php">Don't have an account? Sign-Up</a>
             </form>
         </div>
         
