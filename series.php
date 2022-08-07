@@ -13,7 +13,7 @@ include("headboiler.html");
     <title>Series</title>
 </head>
 <body>
-    <div class="series">
+    <div class="display">
         <!-- this web is able to search and display the required show -->
         <?php include ("headerboiler.html"); ?>
         <h2>Add here your favorite series and shows</h2>
