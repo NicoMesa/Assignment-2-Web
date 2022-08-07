@@ -27,9 +27,12 @@ if($_SERVER["REQUEST_METHOD"] == 'GET'){
        //succesfully added the show
        if(mysqli_query($conn, $sql)){
            //display the series info added
-           echo "<h1>You succesfully added $title to your profile!</h1>
-           <img src='$poster' >
-           <h4> You will be redirectioned to the series search bar in 5 seconds... </h4>";
+           echo 
+           "<div='added'
+                <h1>You succesfully added $title to your profile!</h1>
+                <img src='$poster' >
+                <h4> You will be redirectioned to the series search bar in 5 seconds... </h4>
+            </div>";
        } else{
            echo "Not able to add show $sql. "
                . mysqli_error($conn);
