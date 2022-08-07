@@ -5,7 +5,7 @@ include ("headboiler.html");
 
 ?>
 <body>
-    <div class="userForm">
+    <div class="searchInfo">
         <h2>Register as a new user</h2>
         <!-- Form to get values from user, data will be handled in the bakcend after submit -->
         <form action="new_user.php" method="post" id="register" onsubmit="return newUser()">
