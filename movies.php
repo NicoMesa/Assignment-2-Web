@@ -1,20 +1,12 @@
 <?php
 //session start to get global variables
 session_start();
+include ("headerboiler.html");
 include("headboiler.html");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
-</head>
 <body>
     <div class="display">
         <!-- this web is able to search and display the required movie -->
-        <?php include ("headerboiler.html"); ?>
         <h2>Add here your favorite movies</h2>
         <!-- form to get values to search -->
         <form method="POST">

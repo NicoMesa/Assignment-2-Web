@@ -18,7 +18,7 @@ include ("headerboiler.html"); ?>
     include_once("verify_login.php");
     if(!isset($_SESSION['id'])){
         ?>
-        <br><br><br> <br><br><br><br><br>
+        
         <?php
         echo "<h2> Please sign in to your account! </h2>";
     }
