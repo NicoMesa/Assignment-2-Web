@@ -15,7 +15,7 @@ include ("headerboiler.html"); ?>
    }
    ?>
 <!-- rest of the page to show what the page does -->
-    <div class="mainpage">
+    <div class="searchInfo">
         <h1> This web let you search your favorite movies and store it in your profile! </h1>
         <h2> Search thousands of movies and series and add them to your watchllist!</h2>
         <h3> <i>Never forget what movie or show to watch next</i> </h3>

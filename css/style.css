@@ -39,7 +39,7 @@ img{
     color: #EDF6E6;   
     background-color: #cf5423;     
     padding: 20px;
-    margin-top: 90px;
+    margin-top: 75px;
     overflow: hidden; 
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
@@ -96,7 +96,7 @@ a:hover{
 .loginlink{
     display: flex;
     padding-right: 800px;
-    color: aqua;
+    color: #3e3756;
 }
 .mainpage{
     margin-top: 110px;
@@ -124,6 +124,7 @@ a:hover{
     padding: 2rem 0.2rem;
     line-height: 1.6;
 }
+
 
 
 input[type=text], input[type=password] {
@@ -169,7 +170,7 @@ th {
 td{
     font-size: 25pt;
 }
-.searchInfo{
+.searchInfo, #profile{
     margin-top: 180px;
 }
 
