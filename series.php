@@ -47,9 +47,11 @@ include("headboiler.html");
                 //display info about series
                 echo "
                 <form action='add_series.php' method='get'>
-                    <div class'showInfo'>
+                    <div class='containerInfo'>
+                        <div class'poster'>
                         <br>
                         <img src='$poster'>
+                        </div>
                         <div class='displayInfo'>
                         <h4 name='series'>$title</h4>
                         <h3 name='year'>$year</h3>

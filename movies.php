@@ -50,9 +50,11 @@ include("headboiler.html");
                     //display info about movies
                     echo "
                     <form action='add_movie.php' method='get'>
-                        <div class='showInfo'>
+                        <div class='containerInfo'>
+                            <div class='poster'>
                             <br>
                             <img src='$poster'>
+                            </div>
                             <div class='displayInfo'>
                             <h4 name='movie'>$title</h4>
                             <h3 name='year'>$year</h3>
