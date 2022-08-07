@@ -129,6 +129,7 @@ button[type=submit]{
 
 }
 
+
 button:hover{
     opacity: 0.5;
 }
@@ -156,6 +157,9 @@ img{
 }
 #profile{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+#added{
     text-align: center;
 }
 
