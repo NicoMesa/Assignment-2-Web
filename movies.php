@@ -50,7 +50,7 @@ include("headboiler.html");
                     //display info about movies
                     echo "
                     <form action='add_movie.php' method='get'>
-                        <div>
+                        <div class='showInfo'>
                             <br>
                             <img src='$poster'>
                             <div class='displayInfo'>
@@ -58,6 +58,7 @@ include("headboiler.html");
                             <h3 name='year'>$year</h3>
                             <p name='plot'>$plot</p>
                             <p name='rating'>$rating</p>
+                            </div>
                         </div>";
                         //if user is not signed in
                         if(!isset($_SESSION['id'])){

@@ -47,7 +47,7 @@ include("headboiler.html");
                 //display info about series
                 echo "
                 <form action='add_series.php' method='get'>
-                    <div>
+                    <div class'showInfo'>
                         <br>
                         <img src='$poster'>
                         <div class='displayInfo'>
@@ -55,10 +55,12 @@ include("headboiler.html");
                         <h3 name='year'>$year</h3>
                         <p name='plot'>$plot</p>
                         <p name='rating'>$rating</p>
+                        </div>
                     </div>";
                     //if user is not signed in
                     if(!isset($_SESSION['id'])){
-                        echo "<h4> Please sign or create an account to add $title to your profile! </h4>";
+                        echo "<h4> Please sign or create an account to add $title to your profile! </h4>
+                        <hr>";
                     }
                     //if user signed in, can add serie to profile
                     else{
