@@ -35,7 +35,7 @@ include ("headerboiler.html");
                 $extra_array = file_get_contents($extra_info);
                 $json_extra = json_decode($extra_array, true);
                 $plot = $json_extra['Plot'];
-//                $rating = $json_extra['Ratings'][1]['Value'];
+                $rating = $json_extra['Ratings'][1]['Value'];
                 //display info about series
                 echo "
                 <div class='card'>
@@ -44,8 +44,8 @@ include ("headerboiler.html");
                         <img src='$poster' id='poster'>
                         <h4 name='movie'>$title</h4>
                         <h3 name='year'>$year</h3>
-                        <p name='plot'>$plot</p>";
-//                        <p name='rating'>$rating</p>";
+                        <p name='plot'>$plot</p>
+                        <p name='rating'>$rating</p>";
                     //if user is not signed in
                     if(!isset($_SESSION['id'])){
                         echo "<h4> Sign in or register to add $title to your profile</h4>

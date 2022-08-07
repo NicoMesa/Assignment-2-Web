@@ -1,4 +1,6 @@
 <?php
+include("headerboiler.html");
+include("headboiler.html");
 session_start();
 //redirects to search web 
 header( "refresh:5;url=series.php" );
@@ -31,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == 'GET'){
        if(mysqli_query($conn, $sql)){
            //display the series info added
            echo 
-           "<div='added'>
+           "<div class='searchInfo'>
                 <h1>You succesfully added $title to your profile!</h1>
                 <img src='$poster' >
                 <h4> You will be redirectioned to the series search bar in 5 seconds... </h4>

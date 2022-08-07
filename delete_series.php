@@ -3,7 +3,7 @@ include("headerboiler.html");
 include("headboiler.html");
 session_start();
 //redirect to search bar 
-header( "refresh:5;url=movies.php" );
+header( "refresh:5;url=profile.php" );
 /*
 check errors
 ini_set('display_startup_errors', 1);
@@ -13,10 +13,9 @@ error_reporting(-1);
 
 if($_SERVER["REQUEST_METHOD"] == 'GET'){
     //get data from get array
+    $id = $_SESSION['id'];
     $title = $_GET['title'];
     $poster = $_GET['poster'];
-    $year = $_GET['year'];
-    $rating = $_GET['rating'];
     //start the connection to database
     $conn = mysqli_connect("localhost", "root", "", "assignment2");
     // check the connection
@@ -26,20 +25,19 @@ if($_SERVER["REQUEST_METHOD"] == 'GET'){
             echo "<h3>error conecting to database</h3>";
     }
     
-    // Pinsert the movies to table
-    $sql = "INSERT INTO movies (user_id, title, img, year, rating) 
-    VALUES (  ".$_SESSION['id']." , '$title', '$poster', '$year', '$rating')";
-    //succesfully added the movies
+    // Delete the show to table
+    $sql = "DELETE FROM series WHERE title = '$title' and user_id = " .$_SESSION['id']. " ";
+    //succesfully deleted the show
     if(mysqli_query($conn, $sql)){
-        //display the movie info added
+        //display the show info deleted
         echo 
         "<div class='searchInfo'>
-            <h1>You succesfully added $title to your profile!</h1>
+            <h1>You deleted $title to your profile!</h1>
             <img src='$poster' >
-            <h4> You will be redirectioned to the movie search bar in 5 seconds... </h4>
+            <h4> You will be redirectioned to your profile in 5 seconds... </h4>
         </div>";
     } else{
-        echo "Not able to add movie $sql. "
+        echo "Not able to delete show $sql. "
             . mysqli_error($conn);
             echo "<h3>ERROR</h3>";
     }
