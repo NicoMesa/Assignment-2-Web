@@ -158,9 +158,12 @@ th {
 td{
     font-size: 25pt;
 }
+.searchInfo{
+    margin-top: 180px;
+}
 
 .containerInfo{
-    margin-top: 110px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;

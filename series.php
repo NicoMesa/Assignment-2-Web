@@ -16,12 +16,14 @@ include("headboiler.html");
     <div class="display">
         <!-- this web is able to search and display the required show -->
         <?php include ("headerboiler.html"); ?>
-        <h2>Add here your favorite series and shows</h2>
-        <!-- form to get values to search -->
-        <form method="POST">
-            <input type="text" placeholder="Search.." name="series" id="search">
-            <button type="submit">Search</button>
-        </form>
+        <div class="searchInfo">
+            <h2>Add here your favorite series and shows</h2>
+            <!-- form to get values to search -->
+            <form method="POST">
+                <input type="text" placeholder="Search.." name="series" id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
         <?php
            if($_SERVER["REQUEST_METHOD"] == "POST"){
             //obtain series name from form
