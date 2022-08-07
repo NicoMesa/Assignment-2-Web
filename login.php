@@ -24,6 +24,5 @@ include_once("dbhelper.php");
                 <a href="register.php" class="loginlink">Don't have an account? Sign-Up</a>
             </div>
     </div>
-        
 </body>
 </html>

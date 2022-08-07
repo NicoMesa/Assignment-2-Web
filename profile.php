@@ -28,8 +28,8 @@ include ("headerboiler.html"); ?>
         </div>";
     }
     else{
-?> 
-    <div class="searchInfo">
+?>      
+        <div class="profile">
         <h1>Welcome back <?php echo $_SESSION['username']?></h1>
         <?php
             $conn = mysqli_connect("localhost", "root", "", "assignment2");

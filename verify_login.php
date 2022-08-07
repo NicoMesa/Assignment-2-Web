@@ -20,13 +20,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sql = "SELECT * FROM users WHERE user_name = '$login' and password = '$pass' ";
     $info = mysqli_query($conn, $sql);
     if(!$info){
-        echo "<h3>No records</h3>";
+        echo "<script>alert('$login : user not found')</script>";
     }
     else{
         $array = mysqli_fetch_array($info);
-        echo "<h1>Welcome back: $array[2]</h1>";
-        echo ("<h4>Your email: $array[1] </h4> 
-        <h4>Your user name: $array[2] </h4>");
+        echo "<script>alert('$login : verification completed!')</script>";
         $_SESSION['username'] = $array[2];
         $_SESSION['email'] = $array[1];
         $_SESSION['id'] = $array[0];
