@@ -7,8 +7,7 @@ include("headboiler.html");
 <body>
     <div class="display">
         <!-- this web is able to search and display the required movie -->
-        <?php include ("headerboiler.html"); ?>
-        <h2>Add here your favorite movies</h2>
+        <h2>Find your favorite movies</h2>
         <!-- form to get values to search -->
         <form method="POST">
             <input type="text" placeholder="Search.." name="movie" id="search">
@@ -52,10 +51,10 @@ include("headboiler.html");
                         <h4 name='movie'>$title</h4>
                         <h3 name='year'>$year</h3>
                         <p name='plot'>$plot</p>
-                        <p name='rating'>$rating</p>";
+                        <p name='rating'>Rating: $rating</p>";
                     //if user is not signed in
                     if(!isset($_SESSION['id'])){
-                        echo "<h4> Please sign or create an account to add $title to your profile! </h4>
+                        echo "<h4> Sign in or register to add $title to your profile</h4>
                     </div>
                 </form>
                 </div>";
@@ -69,7 +68,7 @@ include("headboiler.html");
                 </div>";
                     }                   
                 }
-                echo "</div?";
+                echo "</div>";
                 /*      
                 //set session variables in order to handle them in a new page after a new post request
                 $_SESSION['title'] = $title;
