@@ -15,9 +15,11 @@ include("headboiler.html");
             <button type="submit">Search</button>
         </form>
         <?php
+        /*
         ini_set('display_startup_errors', 1);
         ini_set('display_errors', 1);
         error_reporting(-1);
+        */
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 //obtain movie name from form
                 $search = $_POST['movie'];
