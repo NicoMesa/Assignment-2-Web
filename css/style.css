@@ -9,9 +9,7 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: right;
 }
-.registration h1{
-    text-align: center;
-}
+
 p{
     font-size: 20px;
 }
@@ -81,6 +79,7 @@ img{
     justify-content: flex-end;
     font-size: larger;
     font-weight: bolder;
+    text-align: center;
 }
 .registration a{
     justify-content: flex-start;
@@ -184,10 +183,29 @@ th {
 td{
     font-size: 25pt;
 }
-.searchInfo, #profile{
+.searchInfo{
     margin-top: 180px;
+    padding: 130px 0 0;
 }
 
+.searchInfo h1{
+    font-weight: 700;
+}
+
+.searchInfo h2{
+    padding: 15px 0 0;
+    font-weight: 400;
+}
+
+.searchInfo h3{
+    padding: 15px 0 28px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+#profile{
+    margin-top: 180px;
+}
 
 .displayInfo{
     padding-left: 20px;
