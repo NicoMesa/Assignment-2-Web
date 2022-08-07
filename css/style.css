@@ -125,7 +125,21 @@ a:hover{
     line-height: 1.6;
 }
 
+@media only screen and (min-width: 40.063em) and (max-width: 64em){
+    .card {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis:  calc(50% - 1em); 
+    }
+}
 
+@media screen and (max-width: 40em) {
+    .card {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis:  calc(100% - 1em); 
+    }
+}
 
 input[type=text], input[type=password] {
     width: 95%;
