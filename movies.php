@@ -35,6 +35,7 @@ include("headboiler.html");
                 //decode results as array to retrieve information
                 $json = json_decode($array_movies, true);
                //Obtaining info about movies by searching the array
+               echo "<div class='searchResult'>";
                 foreach ($json['Search'] as $i){
                     //save variablesa accordingly
                     $title = $i['Title'];
@@ -49,29 +50,31 @@ include("headboiler.html");
                     $rating = $json_extra['Ratings'][1]['Value'];
                     //display info about movies
                     echo "
+                    <div class='card'>
                     <form action='add_movie.php' method='get'>
-                        <div class='showInfo'>
-                            <br>
-                            <img src='$poster'>
-                            <div class='displayInfo'>
+                        <div class='info'>
+                            <img src='$poster' id='poster'>
                             <h4 name='movie'>$title</h4>
                             <h3 name='year'>$year</h3>
                             <p name='plot'>$plot</p>
-                            <p name='rating'>$rating</p>
-                            </div>
-                        </div>";
+                            <p name='rating'>$rating</p>";
                         //if user is not signed in
                         if(!isset($_SESSION['id'])){
-                            echo "<h4> Please sign or create an account to add $title to your profile! </h4>";
+                            echo "<h4> Sign in or register to add $title to your profile! </h4>
+                        </div>
+                    </form>
+                    </div>";
                         }
                         //if user signed in, can add movie to profile
                         else{
-                        echo "
+                    echo "
                         <button type='submit'> <a href='add_movie.php?title=$title&poster=$poster&year=$year&rating=$rating'> Add $title to my profile </a> </button>
-                        <br>
-                        </form>";
-                        }
+                        </div>
+                    </form>
+                    </div>";
+                        }                   
                     }
+                    echo "</div?";
                 /*      
                 //set session variables in order to handle them in a new page after a new post request
                 $_SESSION['title'] = $title;
