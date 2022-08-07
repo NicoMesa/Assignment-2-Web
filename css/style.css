@@ -6,12 +6,12 @@ body{
     text-align: center;
 }
 .registration{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: right;
 }
 .registration h1{
     text-align: center;
 }
-
 p{
     font-size: 20px;
 }
@@ -79,6 +79,8 @@ img{
 }
 .registration h1{
     justify-content: flex-end;
+    font-size: larger;
+    font-weight: bolder;
 }
 .registration a{
     justify-content: flex-start;
@@ -91,8 +93,6 @@ a{
 a:hover{
     opacity: 0.7;
 }
-
-
 .loginlink{
     display: flex;
     padding-right: 800px;
