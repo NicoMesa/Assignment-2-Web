@@ -12,7 +12,7 @@ include("headboiler.html");
     <title>Movies</title>
 </head>
 <body>
-    <div class="movies">
+    <div class="display">
         <!-- this web is able to search and display the required movie -->
         <?php include ("headerboiler.html"); ?>
         <h2>Add here your favorite movies</h2>
