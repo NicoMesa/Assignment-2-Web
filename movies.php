@@ -1,26 +1,21 @@
 <?php
 //session start to get global variables
 session_start();
+include ("headerboiler.html");
 include("headboiler.html");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
-</head>
 <body>
     <div class="display">
         <!-- this web is able to search and display the required movie -->
         <?php include ("headerboiler.html"); ?>
+        <div class="searchInfo">
         <h2>Add here your favorite movies</h2>
         <!-- form to get values to search -->
-        <form method="POST">
-            <input type="text" placeholder="Search.." name="movie" id="search">
-            <button type="submit">Search</button>
-        </form>
+            <form method="POST">
+                <input type="text" placeholder="Search.." name="movie" id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
         <?php
         ini_set('display_startup_errors', 1);
         ini_set('display_errors', 1);
@@ -52,18 +47,19 @@ include("headboiler.html");
                     echo "
                     <div class='card'>
                     <form action='add_movie.php' method='get'>
-                        <div class='info'>
-                            <img src='$poster' id='poster'>
+                        <div class='showInfo'>
+                            <br>
+                            <img src='$poster'>
+                            <div class='displayInfo'>
                             <h4 name='movie'>$title</h4>
                             <h3 name='year'>$year</h3>
                             <p name='plot'>$plot</p>
-                            <p name='rating'>$rating</p>";
+                            <p name='rating'>$rating</p>
+                            </div>
+                        </div>";
                         //if user is not signed in
                         if(!isset($_SESSION['id'])){
-                            echo "<h4> Sign in or register to add $title to your profile! </h4>
-                        </div>
-                    </form>
-                    </div>";
+                            echo "<h4> Please sign or create an account to add $title to your profile! </h4>";
                         }
                         //if user signed in, can add movie to profile
                         else{

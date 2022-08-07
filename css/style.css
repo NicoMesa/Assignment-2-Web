@@ -6,14 +6,21 @@ body{
     text-align: center;
 }
 .registration{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: right;
 }
 .registration h1{
     text-align: center;
 }
-
 p{
     font-size: 20px;
+}
+
+img{
+    max-width: 100%;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .registration{
     display: flexbox;
@@ -72,6 +79,8 @@ p{
 }
 .registration h1{
     justify-content: flex-end;
+    font-size: larger;
+    font-weight: bolder;
 }
 .registration a{
     justify-content: flex-start;
@@ -84,8 +93,6 @@ a{
 a:hover{
     opacity: 0.7;
 }
-
-
 .loginlink{
     display: flex;
     padding-right: 800px;
@@ -169,10 +176,15 @@ th {
 td{
     font-size: 25pt;
 }
+.searchInfo{
+    margin-top: 180px;
+}
+
 
 .displayInfo{
+    padding-left: 20px;
+    width: 900px;
     text-align: justify;
-
 }
 
 #profile{
