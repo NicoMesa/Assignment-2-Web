@@ -1,7 +1,7 @@
 <?php
 //file to create and store new user to database
 //redirect after creation to the index page.
-header( "refresh:0;url=index.php" );
+header( "refresh:0;url=login.php" );
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //create a connection to database
     $conn = mysqli_connect("localhost", "root", "", "assignment2");
@@ -20,9 +20,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     // here our table name is college
     $sql = "INSERT INTO users (email, user_name, password) VALUES ('$email', '$login','$pass')";
     if(mysqli_query($conn, $sql)){
-        echo "<script>alert('Account created succesfully!');</script>";
+        echo "<script>alert('Account created succesfully: please sign!');</script>";
     } else{
-        echo "ERROR: Hush! Sorry $sql. "
+        echo "ERROR: $sql. "
             . mysqli_error($conn);
             echo "<h3>error</h3>";
     }
