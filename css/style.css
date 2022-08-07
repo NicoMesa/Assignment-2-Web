@@ -15,6 +15,13 @@ body{
 p{
     font-size: 20px;
 }
+
+img{
+    max-width: 100%;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .registration{
     display: flexbox;
     color: #EDF6E6;    
@@ -151,10 +158,24 @@ th {
 td{
     font-size: 25pt;
 }
-img{
-    border: #6E7E6E solid;
 
+.containerInfo{
+    margin-top: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.poster{
+    flex-basis: auto;
+    width: 400px;
+}
+.displayInfo{
+    padding-left: 20px;
+    width: 900px;
+    text-align: justify;
+}
+
+
 #profile{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
