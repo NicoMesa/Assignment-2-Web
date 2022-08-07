@@ -6,7 +6,7 @@ include_once("dbhelper.php");
  ?>
  <body>
     <h2>Login with existing username</h2>
-        <div class="form">
+        <div class="userForm">
             <form action="profile.php" method="post" id="loginform" >
                 <div class="textfield">
                     <label for="userlogin">User Name</label>
