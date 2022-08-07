@@ -104,7 +104,7 @@ a:hover{
     justify-content: center;
 }
 
-.display {
+.display{
     margin-top: 180px;
 }
 
@@ -126,11 +126,6 @@ a:hover{
 }
 
 
-.userform{
-    padding-left: 50px;
-    padding-right: 50px;
-    text-align: left;
-}
 
 input[type=text], input[type=password] {
     width: 95%;
