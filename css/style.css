@@ -15,12 +15,7 @@ body{
 p{
     font-size: 20px;
 }
-img{
-    max-width: 100%;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+
 .registration{
     display: flexbox;
     color: #EDF6E6;    
@@ -156,6 +151,13 @@ th {
 }
 td{
     font-size: 25pt;
+}
+
+img{
+    max-width: 100%;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #profile{
