@@ -12,9 +12,12 @@
 include("headboiler.html");
 include ("headerboiler.html"); ?>
 <?php
+    /*
+    check errors
     ini_set('display_startup_errors', 1);
     ini_set('display_errors', 1);
     error_reporting(-1);
+    */
     include_once("verify_login.php");
     if(!isset($_SESSION['id'])){
         ?>

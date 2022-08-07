@@ -2,9 +2,12 @@
 session_start();
 //redirects to search web 
 header( "refresh:5;url=series.php" );
+/*
+check errors
 ini_set('display_startup_errors', 1);
 ini_set('display_errors', 1);
 error_reporting(-1);
+*/
 
 if($_SERVER["REQUEST_METHOD"] == 'GET'){
        //get data from get array
