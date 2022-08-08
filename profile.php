@@ -1,4 +1,4 @@
-
+<!-- This is the profile of the user, will diplay movies and shows or will tell user to sign in -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +23,18 @@ include ("headerboiler.html"); ?>
     if(!isset($_SESSION['id'])){
         ?>
         <?php
-        echo "<div class='searchInfo'>
-            <h2> Please sign in to your account! </h2>
+        echo "
+        <div class='display'>
+            <div class='searchInfo'>
+                <h2> Please sign in to your account! </h2>
+            </div>
         </div>";
+        include("footer.html");
     }
     else{
 ?>      
-        <div class="profile">
-        <h1>Welcome back <?php echo $_SESSION['username']?></h1>
+        <div class='display'>
+            <h1>Welcome back <?php echo $_SESSION['username']?></h1>
         <?php
             $conn = mysqli_connect("localhost", "root", "", "assignment2");
             // Check connection

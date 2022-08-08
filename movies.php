@@ -1,4 +1,5 @@
 <?php
+//This page is the search bar for the movies
 //session start to get global variables
 session_start();
 include ("headerboiler.html");
@@ -69,14 +70,6 @@ include("headboiler.html");
                     }                   
                 }
                 echo "</div>";
-                /*      
-                //set session variables in order to handle them in a new page after a new post request
-                $_SESSION['title'] = $title;
-                $_SESSION['poster'] = $poster;
-                $_SESSION['year'] = $year;
-                $_SESSION['plot'] = $plot;
-                $_SESSION['rating'] = $rating;
-                */
             }
         ?>
     </div>

@@ -1,4 +1,5 @@
 <?php
+//this page contains the connection to the database to delete the selected movie
 include("headerboiler.html");
 include("headboiler.html");
 session_start();
@@ -31,10 +32,12 @@ if($_SERVER["REQUEST_METHOD"] == 'GET'){
     if(mysqli_query($conn, $sql)){
         //display the movie info deleted
         echo 
-        "<div class='searchInfo'>
-            <h1>You succesfully deleted $title to your profile!</h1>
-            <img src='$poster' >
-            <h4> You will be redirectioned to the movie search bar in 5 seconds... </h4>
+        "<div class='display'>
+            <div class='searchInfo'>
+                <h1>You succesfully deleted $title to your profile!</h1>
+                <img src='$poster' >
+                <h4> You will be redirectioned to the movie search bar in 5 seconds... </h4>
+            </div>
         </div>";
     } else{
         echo "Not able to delete movie $sql. "

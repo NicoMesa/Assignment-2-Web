@@ -1,6 +1,9 @@
+/*
+Style sheet for the design of the web
+*/
+
 *{
     box-sizing: border-box;
-    
 }
 
 /* width */
@@ -254,7 +257,6 @@ td{
     text-align: justify;
 }
 
-
 #added #deleted{
     text-align: center;
 }
@@ -269,9 +271,7 @@ td{
   #delete{
     color: rgb(85, 45, 45);
   }
- .profile{
-    padding-top: 10%;
- }
+
  footer {
     position: fixed;
     width: 100%;

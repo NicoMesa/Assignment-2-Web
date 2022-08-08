@@ -1,5 +1,5 @@
 <?php
-//file to create and store new user to database
+//This page handles data to create and store new user to database
 //redirect after creation to the index page.
 header( "refresh:0;url=login.php" );
 if($_SERVER['REQUEST_METHOD'] == 'POST'){

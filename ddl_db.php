@@ -1,4 +1,9 @@
 <?php
+/*
+Contains all queries and Database definition code to create the database and tables
+Connection to the database server will be done with username root and server localhost
+and will not requiere password to stablish a conncetion
+*/
 //file to create the database and the required tables
 // Create connection
 $conn = mysqli_connect("localhost", "root", "");

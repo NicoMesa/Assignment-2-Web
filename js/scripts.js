@@ -1,7 +1,5 @@
 /*
 JS for a form validation
-Author: Santiago Mesa
-14 july 2022
 */
 var email = document.getElementById('email');
 var login = document.getElementById('login');

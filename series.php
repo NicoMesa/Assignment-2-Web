@@ -1,4 +1,5 @@
 <?php
+//This pages is the search bar for shows and series, will display all available 
 //session start to get global variables
 session_start(); 
 include("headboiler.html");
