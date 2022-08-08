@@ -128,6 +128,11 @@ a:hover{
     padding: 2rem 0.2rem;
     line-height: 1.6;
 }
+.info{
+    height: 800px;
+    overflow: auto;
+    text-overflow: ellipsis;
+}
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em){
     .card {
